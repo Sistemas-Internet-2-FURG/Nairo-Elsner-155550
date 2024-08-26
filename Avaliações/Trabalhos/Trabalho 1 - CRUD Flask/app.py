@@ -71,7 +71,6 @@ def home():
 @app.get('/dashboard')
 @login_required
 def dashboard():
-    #pegar apenas os trabalhos do usuário da sessão atual
     works = db.getWorksByUserId(session['userId'])
     return render_template('dashboard.html', works=works)
 
@@ -130,7 +129,7 @@ def deleteWork(id):
 
 
 @app.get('/users')
-def createUser():
+def getUsers():
     return db.getUsers()
 
 @app.get('/courses')
