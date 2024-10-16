@@ -80,7 +80,7 @@ def createWork():
     return jsonify({'error': 'Missing required fields'}), 400
 
 @app.get('/works/<id>')
-#@jwt_required()
+@jwt_required()
 def getWork(id):
     work = db.getWorkById(id)
 
