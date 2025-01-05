@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 224, 224, 224;
+  --background-start-rgb: 18, 18, 18;
+  --background-end-rgb: 18, 18, 18;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: 'Roboto', sans-serif;
+}
+
+.works {
+  @apply flex flex-wrap gap-5 justify-center;
+}
+
+.card {
+  @apply bg-[#2c2c2c] rounded-lg shadow-lg w-60 h-[300px] p-5 flex flex-col items-stretch justify-between transition-all hover:translate-y-[-10px] hover:shadow-xl;
+}
+
+.card h2 {
+  @apply text-xl mb-2.5 text-[#e0e0e0] text-center;
+}
+
+.card .description {
+  @apply text-sm text-[#b0b0b0] my-2.5 text-center overflow-hidden text-ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
+
+.card p {
+  @apply text-base text-[#e0e0e0] my-1 text-center;
+}
+
+.card .price {
+  @apply text-lg text-[#00e676] my-2.5 font-bold;
+}
+
+.card button {
+  @apply bg-[#3f51b5] text-white py-3 px-5 border-none rounded cursor-pointer text-base transition-all hover:bg-[#303f9f] hover:scale-105;
+}
+
+.my-card {
+  @apply h-[250px] justify-center;
+}
+
+.actions {
+  @apply flex justify-center gap-2.5 w-full;
+}
+
+.actions .delete-button {
+  @apply bg-[#c45252] hover:bg-[#a23a3a];
+}
+
+.form-page {
+  @apply flex justify-center items-center bg-[#121212];
+}
+
+.form-container {
+  @apply w-full max-w-md bg-[#1f1f1f] p-10 rounded-lg shadow-lg;
+}
+
+.form h2 {
+  @apply text-center mb-5 text-3xl text-white;
+}
+
+.form label {
+  @apply font-bold block mb-2 text-[#b3b3b3];
+}
+
+.form input,
+.form select,
+.form textarea {
+  @apply w-full p-2 mb-4 border-none rounded bg-[#333] text-white;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  @apply text-[#888];
+}
+
+.form button {
+  @apply w-full py-2.5 bg-[#3498db] text-white border-none rounded cursor-pointer text-base transition-colors hover:bg-[#2980b9];
+}
+
